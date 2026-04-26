@@ -57,6 +57,7 @@ $jobs_result = mysqli_query($conn, "
             <a href="login.php">Login</a>
             <a href="register.php" class="btn-nav">Register</a>
         <?php endif; ?>
+            <a href="admin_login.php" style="font-size:0.85rem;color:var(--text-muted);">🛡️ Admin</a>
     </div>
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
 </nav>
@@ -246,6 +247,7 @@ $jobs_result = mysqli_query($conn, "
             <a href="#">Privacy</a>
             <a href="#">Contact</a>
             <a href="#">Rating</a>
+            <a href="admin_login.php">🛡️ Admin Portal</a>
         </div>
         <p class="footer-copy">© 2026 labourhub. All rights reserved.</p>
     </div>
