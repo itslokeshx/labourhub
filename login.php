@@ -15,6 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($email) || empty($password)) {
         $error = "Please fill in all fields.";
+    } elseif (strpos($email, '@') === false) {
+        $error = "Invalid email format. Must contain '@'.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Please enter a valid email address.";
     } else {
         $result = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
         $user   = mysqli_fetch_assoc($result);

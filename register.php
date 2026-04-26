@@ -20,8 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($name) || empty($email) || empty($password) || empty($role)) {
         $error = "All fields are required.";
+    } elseif (strpos($email, '@') === false) {
+        $error = "Invalid email format. Must contain '@'.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = "Invalid email address.";
+        $error = "Please enter a valid email address.";
     } elseif (strlen($password) < 6) {
         $error = "Password must be at least 6 characters.";
     } elseif (!in_array($role, ['worker', 'employer'])) {
