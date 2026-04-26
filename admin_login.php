@@ -11,21 +11,19 @@ if (isset($_SESSION['admin_id'])) {
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = mysqli_real_escape_string($conn, trim($_POST['email']));
+    $username = mysqli_real_escape_string($conn, trim($_POST['username']));
     $password = $_POST['password'];
 
-    if (empty($email) || empty($password)) {
+    if (empty($username) || empty($password)) {
         $error = "Please fill in all fields.";
-    } elseif (strpos($email, '@') === false || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = "Please enter a valid admin email (must contain '@').";
     } else {
-        $result = mysqli_query($conn, "SELECT * FROM admins WHERE email='$email'");
+        $result = mysqli_query($conn, "SELECT * FROM admins WHERE username='$username'");
         $admin  = mysqli_fetch_assoc($result);
 
         if ($admin && password_verify($password, $admin['password'])) {
             $_SESSION['admin_id']   = $admin['id'];
             $_SESSION['admin_name'] = $admin['name'];
-            $_SESSION['admin_email']= $admin['email'];
+            $_SESSION['admin_user'] = $admin['username'];
             header("Location: admin_dashboard.php");
             exit;
         } else {
@@ -56,8 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <form method="POST" action="admin_login.php">
             <div class="form-group">
-                <label>Admin Email</label>
-                <input type="email" name="email" placeholder="admin@labourhub.com" required autofocus>
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter admin username" required autofocus>
             </div>
             <div class="form-group">
                 <label>Password</label>
