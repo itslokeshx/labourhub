@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../backend/config/db.php';
 
 // If already logged in as admin, redirect
 if (isset($_SESSION['admin_id'])) {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login — labourhub</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="../frontend/assets/css/admin_style.css">
 </head>
 <body>
 <div class="admin-login-page">

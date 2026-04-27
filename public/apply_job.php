@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../backend/config/db.php';
 
 // Only workers can apply
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'worker') {
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$already) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply for Job — WorkForce</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../frontend/assets/css/style.css">
     <style>
         .apply-page { min-height: 100vh; background: var(--bg); padding: 40px 60px; }
         .apply-container { max-width: 860px; margin: 0 auto; }
@@ -359,6 +359,6 @@ function calcEarning() {
 }
 calcEarning();
 </script>
-<script src="script.js"></script>
+<script src="../frontend/assets/js/script.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../backend/config/db.php';
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'worker') {
     header("Location: login.php");
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_profile'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worker Dashboard — WorkForce</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../frontend/assets/css/style.css">
     <style>
         .profile-section { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
         .profile-card { background: white; border-radius: var(--radius); padding: 32px; border: 1px solid var(--border); }
@@ -264,6 +264,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_profile'])) {
     </div>
 </div>
 
-<script src="script.js"></script>
+<script src="../frontend/assets/js/script.js"></script>
 </body>
 </html>

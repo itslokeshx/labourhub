@@ -108,7 +108,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 80px 60px;
-    background: linear-gradient(to right, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.8) 50%, rgba(26, 26, 46, 0.6) 100%), url('assets/batman.jpg');
+    background: linear-gradient(to right, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.8) 50%, rgba(26, 26, 46, 0.6) 100%), url('../assets/hero-bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

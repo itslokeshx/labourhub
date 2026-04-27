@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../backend/config/db.php';
 
 // Redirect if already logged in
 if (isset($_SESSION['user_id'])) {
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register — WorkForce</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../frontend/assets/css/style.css">
 </head>
 <body>
 <div class="form-page">

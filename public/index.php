@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../backend/config/db.php';
 
 // Fetch filters
 $skill_filter    = isset($_GET['skill'])    ? mysqli_real_escape_string($conn, $_GET['skill'])    : '';
@@ -35,7 +35,7 @@ $jobs_result = mysqli_query($conn, "
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>labourhub — Smart Labour Hiring Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../frontend/assets/css/style.css">
 </head>
 <body>
 
@@ -253,6 +253,6 @@ $jobs_result = mysqli_query($conn, "
     </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="../frontend/assets/js/script.js"></script>
 </body>
 </html>
